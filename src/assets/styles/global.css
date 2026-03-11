@@ -1,0 +1,20 @@
+/* 全局样式重置（消除浏览器默认样式） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 页面全局容器 */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

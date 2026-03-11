@@ -1,0 +1,27 @@
+{
+  // TS 编译核心配置
+  "compilerOptions": {
+    // 编译目标 ES 版本：适配 Node.js 16+ 和 Hardhat 要求
+    "target": "es2020",
+    // 模块系统：用 CommonJS（Node.js 传统模式，Hardhat 官方推荐）
+    "module": "commonjs",
+    // 模块解析规则：用 Node.js 标准解析方式（和 commonjs 配套，解决 HH13 报错）
+    "moduleResolution": "node",
+    // 开启严格类型检查：避免低级错误（比如未定义变量、类型不匹配）
+    "strict": true,
+    // 兼容 CommonJS/ES 模块：可以用 import { ethers } from "hardhat" 简洁写法
+    "esModuleInterop": true,
+    // 允许导入 JSON 文件：能直接导入合约 ABI、部署配置等 JSON 文件
+    "resolveJsonModule": true,
+    // 跳过第三方包的类型检查：减少无关报错（比如 node_modules 里的类型问题）
+    "skipLibCheck": true,
+    // 强制文件名大小写一致：避免 Windows/Mac 跨平台兼容问题
+    "forceConsistentCasingInFileNames": true,
+    // 全局类型引入：识别 Hardhat/Node/Mocha 的全局函数（比如 describe、it、ethers）
+    "types": ["hardhat", "node", "mocha"]
+  },
+  // 指定 TS 要检查的文件目录：测试文件、部署脚本
+  "include": ["test/**/*", "scripts/**/*"],
+  // 排除不需要检查的目录：第三方依赖
+  "exclude": ["node_modules"]
+}
