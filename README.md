@@ -21,12 +21,18 @@
 
 ## 3. 相关命令
 
-启动前端 DApp（核心）: yarn dev
-生产环境打包 : yarn build
-部署 Counter 合约到链上	: yarn deploy:counter
-部署 helloWorld 合约部署到链上 :yarn deploy:helloWorld
-编译 : yarn compile
-启动本地区块链网络 : yarn hardhat-node
+启动前端 DApp（核心）: yarn dev;
+
+生产环境打包 : yarn build;
+
+部署 Counter 合约到链上	: yarn deploy:counter;
+
+部署 helloWorld 合约部署到链上 :yarn deploy:helloWorld;
+
+编译 : yarn compile;
+
+启动本地区块链网络 : yarn hardhat-node;
+
 
 ## 4. 效果
 启动本地区块链网络。
