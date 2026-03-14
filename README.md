@@ -1,4 +1,4 @@
-# Dapp Hardhat Project Demo
+# Dapp OpenZeppelin Hardhat Project Demo
 
 ## 1. 项目介绍
 
