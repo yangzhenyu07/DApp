@@ -14,7 +14,9 @@
     "deploy:TokenUpgradeable": "npx hardhat run scripts/deploy-TokenUpgradeable.ts --network localhost",
     "deploy:counter": "npx hardhat run scripts/deploy-counter.ts --network localhost",
     "deploy:counter:eth-Sepolia": "npx hardhat run scripts/deploy-counter.ts --network sepolia_eth",
-    "deploy:helloWorld": "npx hardhat run scripts/deploy-helloWorld.ts --network localhost"
+    "deploy:helloWorld": "npx hardhat run scripts/deploy-helloWorld.ts --network localhost",
+    "test:erc20": "npx hardhat test test/ERC20/MyC20.ts",
+    "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",

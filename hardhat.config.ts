@@ -26,7 +26,8 @@ const config: HardhatUserConfig = {
       optimizer: {
         enabled: true,
         runs: 200
-      }
+      },
+      evmVersion: "cancun", // 核心：添加这行，支持mcopy指令
     }
   },
   
