@@ -2,26 +2,27 @@
 import "@nomicfoundation/hardhat-ethers";
 import { ethers } from "hardhat";
 
-// HelloWorld 合约
+const CONTRACT_NAME = "Token";
+
+// 部署合约
 async function contract(){
-  console.log("开始部署 Counter 合约...");
+  console.log(`开始部署 ${CONTRACT_NAME} 合约...`);
   // 获取合约工厂
-  const Counter = await ethers.getContractFactory("Counter");
+  const factory = await ethers.getContractFactory("Token");
+  // 关键：传入构造函数所需的初始发行量参数
+  const initialSupply = ethers.parseEther("1000000"); // 初始发行量：100万枚（带18位小数
   // 部署合约
-  const counter = await Counter.deploy();
-//   const helloWorld = await HelloWorld.deploy({
-//     gasPrice: ethers.parseUnits("1000", "gwei"), // 1 Gwei = 10^9 wei
-//   });
-  await counter.waitForDeployment();
-  // v6新版获取地址方式
-  const contractAddress = await counter.getAddress();
+  const deploy = await factory.deploy(initialSupply);
+  await deploy.waitForDeployment();
+  // 获取地址方式
+  const contractAddress = await deploy.getAddress();
   return contractAddress;
 }
 
 async function deploy() {
 
   const contractAddress = await contract();
-  console.log(`Counter 部署完成！`);
+  console.log(`${CONTRACT_NAME} 部署完成！`);
   console.log(`合约地址: ${contractAddress}`);
 }
 

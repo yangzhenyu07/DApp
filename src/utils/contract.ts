@@ -39,11 +39,11 @@ export class ContractUtil {
   static async callWriteMethod(contract: Contract, methodName: string, ...args: any[]) {
     logInfo(`【合约工具】调用写方法：${methodName}，参数：`, args);
     try {
-      // 发起交易
+      // 发起交易 transation提交
       const tx = await contract[methodName](...args);
       logInfo(`【合约工具】交易已发起，交易哈希：`, tx.hash);
       // 等待交易上链确认（默认1个区块确认）
-      const receipt = await tx.wait();
+      const receipt = await tx.wait(); // 等等transation 完成
       if (receipt.status === 1) {
         logInfo(`【合约工具】交易上链成功，区块号：`, receipt.blockNumber);
         return { tx, receipt, success: true };

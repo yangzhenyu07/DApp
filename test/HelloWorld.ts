@@ -14,7 +14,13 @@ describe("HelloWorld", function () {
         // 部署合约,拿到合约实例
         const hw = await HW.deploy();
         await hw.waitForDeployment();//等待部署完成
+
+        // 测试gas
+        for (let index = 0; index < 10; index++) {
+           await hw.test1();
+           await hw.test2();
+        }
         // 测试合约的方法调用结果,并输出
-        expect(await hw.hello()).to.equal("Hello, World");
+        expect(await hw.hello()).to.equal("Hello World");
     });
 });

@@ -12,7 +12,6 @@ async function contract(){
   const helloWorld = await HelloWorld.deploy({
     gasPrice: ethers.parseUnits("1000", "gwei"), // 1 Gwei = 10^9 wei
   });
-  // 老师用的v6新版方法，替换旧的deployed()
   await helloWorld.waitForDeployment();
   // v6新版获取地址方式
   const contractAddress = await helloWorld.getAddress();
