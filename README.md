@@ -5,7 +5,7 @@
 基于 Hardhat + OpenZeppelin + MetaMask 钱包 开发的极简去中心化应用（DApp），
 核心功能是通过链上智能合约实现「计数器自增」操作，完整覆盖新手入门 DApp 开发的核心流程：钱包连接与授权、链 ID 校验与自动切换、
 
-智能合约功能包含：(可升级/不可升级)合约部署与链上交互，ERC20,ERC20Permit 单元测试<br/>
+智能合约功能包含：(可升级/不可升级)合约部署与链上交互，ERC20,ERC20Permit 单元测试.合约验签单元测试<br/>
 
 技术:solidity ^0.8.28、hardhat 2.28.4、openzeppelin 5.6.1 ethers 6.16.0
 

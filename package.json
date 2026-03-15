@@ -15,8 +15,11 @@
     "deploy:counter": "npx hardhat run scripts/deploy-counter.ts --network localhost",
     "deploy:counter:eth-Sepolia": "npx hardhat run scripts/deploy-counter.ts --network sepolia_eth",
     "deploy:helloWorld": "npx hardhat run scripts/deploy-helloWorld.ts --network localhost",
+    "deploy:VerifySignature": "npx hardhat run scripts/deploy-VerifySignature.ts --network localhost",
     "test:erc20": "npx hardhat test test/ERC20/MyC20.ts",
-    "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts"
+    "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts",
+    "test:VerifySignature": "npx hardhat test test/VerifySignature.ts"
+
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
