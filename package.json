@@ -11,16 +11,17 @@
     "test": "npx hardhat test",
     "clean": "npx hardhat clean",
     "deploy:token": "npx hardhat run scripts/deploy-Token.ts --network localhost",
-    "deploy:TokenUpgradeable": "npx hardhat run scripts/deploy-TokenUpgradeable.ts --network localhost",
+    "upgrade:TokenUpgradeable": "npx hardhat run scripts/deploy-TokenUpgradeable.ts --network localhost",
     "deploy:counter": "npx hardhat run scripts/deploy-counter.ts --network localhost",
     "deploy:counter:eth-Sepolia": "npx hardhat run scripts/deploy-counter.ts --network sepolia_eth",
     "deploy:helloWorld": "npx hardhat run scripts/deploy-helloWorld.ts --network localhost",
     "deploy:VerifySignature": "npx hardhat run scripts/deploy-VerifySignature.ts --network localhost",
+    "deploy:BoxV1": "npx hardhat run scripts/upgradable/deploy-BoxV1Proxy.ts --network localhost",
+    "upgrade:BoxV2": "npx hardhat run scripts/upgradable/upgrade-TPUProxy.ts --network localhost",
     "test:erc20": "npx hardhat test test/ERC20/MyC20.ts",
     "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts",
     "test:VerifySignature": "npx hardhat test test/VerifySignature.ts",
     "test:MyAccessControlContract": "npx hardhat test test/MyAccessControlContract.ts"
-
 
   },
   "devDependencies": {

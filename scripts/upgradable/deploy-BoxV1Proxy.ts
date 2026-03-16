@@ -3,14 +3,16 @@ import hre from "hardhat";
 import "@nomicfoundation/hardhat-ethers";
 import "@openzeppelin/hardhat-upgrades";
 
-const CONTRACT_NAME = "BoxV2";
-const PROXY_ADDRESS = "0x0165878A594ca255338adfa4d48449f69242Eb8F";
+const CONTRACT_NAME = "BoxV1";
+
 // 部署合约
 async function contract(){
-  console.log(`开始升级 ${CONTRACT_NAME} 代理合约...`);
+  console.log(`开始部署 ${CONTRACT_NAME} 代理合约...`);
   // 获取合约工厂
-  const factory = await hre.ethers.getContractFactory("BoxV2");
-  const proxy = await hre.upgrades.upgradeProxy(PROXY_ADDRESS,factory);
+  const factory = await hre.ethers.getContractFactory("BoxV1");
+  const proxy = await hre.upgrades.deployProxy(factory,[1],{
+     initializer: "initialize"
+  });
 
   // 获取代理合约地址方式
   const contractAddress = await proxy.getAddress();

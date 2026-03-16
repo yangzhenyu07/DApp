@@ -7,6 +7,7 @@ contract BoxV1 is Initializable{
 
     uint public x;
 
+    // initialize 替代constructor
     function initialize(uint _val) external initializer{
         x = _val;
     }
