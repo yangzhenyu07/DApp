@@ -18,6 +18,8 @@
     "deploy:VerifySignature": "npx hardhat run scripts/deploy-VerifySignature.ts --network localhost",
     "deploy:BoxV1": "npx hardhat run scripts/upgradable/deploy-BoxV1Proxy.ts --network localhost",
     "upgrade:BoxV2": "npx hardhat run scripts/upgradable/upgrade-TPUProxy.ts --network localhost",
+    "deploy:UupsV1": "npx hardhat run scripts/UUPS/deploy-UupsV1.ts --network localhost",
+
     "test:erc20": "npx hardhat test test/ERC20/MyC20.ts",
     "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts",
     "test:VerifySignature": "npx hardhat test test/VerifySignature.ts",

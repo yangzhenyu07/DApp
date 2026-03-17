@@ -10,7 +10,7 @@
 2、ERC20,ERC20Permit 单元测试；<br/>
 3、合约验签单元测试；<br/>
 4、AccessControl 合约单元测试;<br/>
-5、透明代理升级示例;
+5、透明代理升级/UUPS代理升级示例;
 
 技术:solidity ^0.8.28、hardhat 2.28.4、openzeppelin 5.6.1 ethers 6.16.0
 
@@ -35,7 +35,7 @@
 3、ERC20,ERC20Permit 单元测试。<br/>
 4、合约验签单元测试。<br/>
 5、AccessControl 合约单元测试。<br/>
-6、透明代理升级示例。
+6、透明代理升级/UUPS代理升级示例。
 
 ## 3. 相关命令
 
