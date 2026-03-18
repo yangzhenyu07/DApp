@@ -19,11 +19,14 @@
     "deploy:BoxV1": "npx hardhat run scripts/upgradable/deploy-BoxV1Proxy.ts --network localhost",
     "upgrade:BoxV2": "npx hardhat run scripts/upgradable/upgrade-TPUProxy.ts --network localhost",
     "deploy:UupsV1": "npx hardhat run scripts/UUPS/deploy-UupsV1.ts --network localhost",
+    "deploy:UupsV2": "npx hardhat run scripts/UUPS/upgrade-UupsV2.ts --network localhost",
 
     "test:erc20": "npx hardhat test test/ERC20/MyC20.ts",
     "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts",
     "test:VerifySignature": "npx hardhat test test/VerifySignature.ts",
-    "test:MyAccessControlContract": "npx hardhat test test/MyAccessControlContract.ts"
+    "test:MyAccessControlContract": "npx hardhat test test/MyAccessControlContract.ts",
+    "test:Box": "npx hardhat test test/LOCKTIME/delay/Box.ts",
+    "test:MyToken": "npx hardhat test test/LOCKTIME/TokenVesting/MyToken.ts"
 
   },
   "devDependencies": {
