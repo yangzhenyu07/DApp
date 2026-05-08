@@ -64,9 +64,32 @@ async function main() {
 
     // 4. 转账（带 Gas 配置）
     console.log(`${wallet.address} 开始转账：${amountStr} ${symbol} → ${TO_ADDRESS}`);
+    // 获取当前的 Gas 价格和网络信息
+    const feeData = await provider.getFeeData();
+    // 获取当前 nonce（交易计数器）
+    const nonce = await provider.getTransactionCount(wallet.address);
+    console.log(`当前 nonce: ${nonce}`);
+    // 获取当前 Gas 价格（单位：Wei/gas）
+    const gasPrice = await provider.getGasPrice();
+    // 获取当前网络信息
+    const network = await provider.getNetwork().then(network => {
+      console.log(`当前网络: ${network.name} (chainId: ${network.chainId})`);
+    } );  
+ 
+  
+    console.log(`当前 gasPrice: ${gasPrice}`);
+    // 转账交易（ERC20 转账需要调用合约的 transfer 方法，并且需要设置 gasLimit 和 EIP-1559 的 maxFeePerGas 和 maxPriorityFeePerGas）
+    // ERC20 transfer 合约调用（EIP-1559 标准交易）
+    // gasLimit: 100000 对 USDT 足够安全
+    // maxFeePerGas / maxPriorityFeePerGas 从网络自动获取，无需手动改
+    // nonce 由 getTransactionCount 自动获取下一个可用值，直接使用即可s
     const tx = await contract.connect(wallet).transfer(TO_ADDRESS, amountWei, {
-      gasLimit: 100000, // 固定安全值
+      gasLimit: 100000,
+      maxFeePerGas: feeData.maxFeePerGas,
+      maxPriorityFeePerGas: feeData.maxPriorityFeePerGas,
+      nonce: nonce
     });
+
 
     console.log("交易发送：", tx.hash);
 
