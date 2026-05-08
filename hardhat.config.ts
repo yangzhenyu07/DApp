@@ -35,13 +35,18 @@ const config: HardhatUserConfig = {
   // 网络配置：仅保留官方标准属性，剔除所有非通用项
   networks: {
     hardhat: {
-      chainId: 31337 // Hardhat本地链官方默认链ID，无额外自定义
+      chainId: 31337, // Hardhat本地链官方默认链ID，无额外自定义
+      mining: {
+        auto: true,
+        interval: [3000, 5000] // 3～5秒出一个块 模拟生产
+      }
     },
     localhost: {
       url: "http://127.0.0.1:8545",
       chainId: 31337,
       blockGasLimit: 16777216, // 提高硬hat节点区块gas上限
       gas: 16777216 // 全局默认gas limit
+
     }
     // sepolia_eth: {
     //   url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.TEST_ETH_API_KEY}`, // 以太坊的测试链

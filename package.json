@@ -20,14 +20,12 @@
     "upgrade:BoxV2": "npx hardhat run scripts/upgradable/upgrade-TPUProxy.ts --network localhost",
     "deploy:UupsV1": "npx hardhat run scripts/UUPS/deploy-UupsV1.ts --network localhost",
     "deploy:UupsV2": "npx hardhat run scripts/UUPS/upgrade-UupsV2.ts --network localhost",
-
     "test:erc20": "npx hardhat test test/ERC20/MyC20.ts",
     "test:erc20permit": "npx hardhat test test/ERC20Permit/MyC20Permit.ts",
     "test:VerifySignature": "npx hardhat test test/VerifySignature.ts",
     "test:MyAccessControlContract": "npx hardhat test test/MyAccessControlContract.ts",
     "test:Box": "npx hardhat test test/LOCKTIME/delay/Box.ts",
     "test:MyToken": "npx hardhat test test/LOCKTIME/TokenVesting/MyToken.ts"
-
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
@@ -48,8 +46,8 @@
     "@types/node": "25.3.3",
     "chai": "4.2.0",
     "css-loader": "7.1.4",
-    "dotenv": "17.3.1",
-    "ethers": "6.16.0",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.16.0",
     "hardhat": "2.28.4",
     "hardhat-gas-reporter": "^2.3.0",
     "html-webpack-plugin": "5.6.6",
@@ -66,6 +64,7 @@
     "webpack-merge": "6.0.1"
   },
   "dependencies": {
-    "cross-env": "10.1.0"
+    "cross-env": "10.1.0",
+    "prompt": "^1.3.0"
   }
 }
